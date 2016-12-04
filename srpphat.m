@@ -1,4 +1,4 @@
-function [finalpos,finalsrp]=srpphat16(x, mic_loc, fs, lsb, usb)
+function [finalpos,finalsrp]=srpphat(x, mic_loc, fs, lsb, usb)
 %% This function uses SRP-PHAT
 %% Inputs:
 %%% 1) x is "A FRAME" of data (L x M), L should be a power of 2
