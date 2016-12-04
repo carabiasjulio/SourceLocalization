@@ -18,7 +18,7 @@ pos_ini = 10000;
 pos_fin = 20000;
 
 % Compute SRP_PHAT
-[finalpos,finalsrp]=srpphat16(y(pos_ini:pos_fin,:), mic_loc);%, fs, lsb, usb);
+[finalpos,finalsrp]=srpphat(y(pos_ini:pos_fin,:), mic_loc);%, fs, lsb, usb);
 
 % Display the source location, just xy coord to simplify
 room = zeros(usb(1),usb(2));
