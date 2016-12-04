@@ -1,12 +1,11 @@
 function [finalpos,finalsrp]=srpphat(x, mic_loc, fs, lsb, usb)
 %% This function uses SRP-PHAT
 %% Inputs:
-%%% 1) x is "A FRAME" of data (L x M), L should be a power of 2
+%%% 1) x is the multi-channel input data (samples x channels)
 %%% 2) mic_loc is the microphone 3D-locations (M x 3) ( in meters)
 %%% 3) fs: sampling rate (Hz)
-%%% 4) lsb: a row-vector of the lower rectangular search boundary, e.g., [-2 -1 0] (meters)
-%%% 5) usb: row-vector of the upper rectangular search boundary, e.g., [2 0 6] (m)
-%%% It also calls other 2 subroutines: src and fe.
+%%% 4) lsb: a row-vector of the lower rectangular search boundary, e.g., [1 1 1] (meters)
+%%% 5) usb: row-vector of the upper rectangular search boundary, e.g., [14 22 5] (m)
 %% Outputs:
 %%% 1) finalpos: estimated location of the source
 %%% 2) finalsrp: srp-phat value of the point source
@@ -32,7 +31,6 @@ efmax=max(mdist);
 
 %% Doing the GCC-PHAT:
 
-% Calcula STFT y se queda con la fase
 X = stft_multi(x',win);
 [nbin,nfram,nchan] = size(X);
 
