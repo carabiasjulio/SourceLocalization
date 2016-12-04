@@ -1,4 +1,4 @@
-function [finalpos,finalsrp]=srpphat(x, mic_loc, fs, lsb, usb)
+function [finalpos,finalsrp]=srpphat16(x, mic_loc, fs, lsb, usb)
 %% This function uses SRP-PHAT
 %% Inputs:
 %%% 1) x is "A FRAME" of data (L x M), L should be a power of 2
@@ -12,12 +12,13 @@ function [finalpos,finalsrp]=srpphat(x, mic_loc, fs, lsb, usb)
 %%% 2) finalsrp: srp-phat value of the point source
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-ngrid = 1810;
-win = 4096;
-sp_resolution= .5;
+ngrid = 1810;       % Number of TDoA to consider
+win = 4096;         % window size (for the spectrogram)
+sp_resolution= .5;  % In meters, spatial resolution for the searching procedure
+                    %                   (low value = more computational demand)
 
 %% Initialize variables:
-if nargin < 5, usb=[14 22 5]; end
+if nargin < 5, usb=max(mic_loc); end
 if nargin < 4, lsb=[1 1 1]; end
 if nargin < 3, fs=44100; end
 
