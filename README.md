@@ -1,2 +1,2 @@
 # SourceLocalization
-SPR-PHAT source localization implementation
+SPR-PHAT source localization Matlab implementation
