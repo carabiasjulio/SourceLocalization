@@ -15,7 +15,7 @@ load('./Examples/bassoon_5mics.mat','y','fs');    % Ground-Truth (4,18,2)
 
 % Take a chuck from the signal (fast computation for demo)
 pos_ini = 10000;
-pos_fin = 20000;
+pos_fin = pos_ini + 2*fs; % 2 seconds from pos_ini
 
 % Compute SRP_PHAT
 [finalpos,finalsrp]=srpphat(y(pos_ini:pos_fin,:), mic_loc);%, fs, lsb, usb);
