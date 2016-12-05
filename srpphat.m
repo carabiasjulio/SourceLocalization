@@ -10,6 +10,10 @@ function [finalpos,finalsrp]=srpphat(x, mic_loc, fs, lsb, usb)
 %%% 1) finalpos: estimated location of the source
 %%% 2) finalsrp: srp-phat value of the point source
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright 2016 Julio Carabias
+% This software is distributed under the terms of the GNU Public License
+% version 3 (http://www.gnu.org/licenses/gpl.txt)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 ngrid = 1810;       % Number of TDoA to consider
 win = 4096;         % window size (for the spectrogram)
