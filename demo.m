@@ -8,10 +8,10 @@ mic_loc = [7,20,2; ...
           11,15,2; ...
           7,9,2];
         
-load('bassoon_5mics.mat','y','fs');    % Ground-Truth (4,18,2)
-%load('clarinet_5mics.mat','y','fs');   % Ground-Truth (10,18,2)
-%load('saxphone_5mics.mat','y','fs');   % Ground-Truth (4,13,2)
-%load('violin_5mics.mat','y','fs');     % Ground-Truth (10,13,2)
+load('./Examples/bassoon_5mics.mat','y','fs');    % Ground-Truth (4,18,2)
+%load('./Examples/clarinet_5mics.mat','y','fs');   % Ground-Truth (10,18,2)
+%load('./Examples/saxphone_5mics.mat','y','fs');   % Ground-Truth (4,13,2)
+%load('./Examples/violin_5mics.mat','y','fs');     % Ground-Truth (10,13,2)
 
 % Take a chuck from the signal (fast computation for demo)
 pos_ini = 10000;
